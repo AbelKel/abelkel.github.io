@@ -1,9 +1,3 @@
-/*
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var $window = $(window),
@@ -102,7 +96,7 @@
 					caption: function($a) { return $a.next('h3').text(); },
 					overlayColor: '#2c2c2c',
 					overlayOpacity: 0.85,
-					popupCloserText: '',
+					popupCloserText: '&times;',
 					popupLoaderText: '',
 					selector: '.work-item a.image',
 					usePopupCaption: true,
@@ -110,6 +104,22 @@
 					usePopupEasyClose: false,
 					usePopupNav: true,
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
+
+				$('#three .work-item a.image').poptrox({
+					caption: function ($a) {
+						return $a.next('h3').text(); // Use the <h3> element as the caption
+					},
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '&times;', // Close button
+					popupLoaderText: 'Loading...',
+					selector: 'a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50),
 				});
 
 			});
