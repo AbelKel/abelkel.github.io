@@ -2599,7 +2599,7 @@ input, select, textarea {
     text-align: right;
     top: 0;
     width: 35%;
-    animation: scrollBackground linear infinite; 
+	animation: scrollBackground 10s linear infinite;
 }
 
 /* Keyframes for scrolling background */
