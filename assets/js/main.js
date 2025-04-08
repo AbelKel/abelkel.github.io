@@ -124,4 +124,35 @@
 
 			});
 
+	// Handle highlight interactions
+	document.querySelectorAll('.highlight').forEach(highlight => {
+		highlight.addEventListener('click', function() {
+			// Remove active class from all highlights
+			document.querySelectorAll('.highlight').forEach(h => h.classList.remove('active'));
+			
+			// Add active class to clicked highlight
+			this.classList.add('active');
+			
+			// Get the category from the highlight's data attribute
+			const category = this.getAttribute('data-category');
+			
+			// Handle grid items filtering
+			const gridItems = document.querySelectorAll('.grid-item');
+			gridItems.forEach(item => {
+				if (category === 'all' || item.getAttribute('data-category') === category) {
+					item.style.opacity = '1';
+					item.style.transform = 'scale(1)';
+					item.style.pointerEvents = 'auto';
+				} else {
+					item.style.opacity = '0.3';
+					item.style.transform = 'scale(0.95)';
+					item.style.pointerEvents = 'none';
+				}
+			});
+		});
+	});
+
+	// Set 'All' highlight as active by default
+	document.querySelector('.highlight[data-category="all"]').classList.add('active');
+
 })(jQuery);
