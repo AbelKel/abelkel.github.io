@@ -3763,6 +3763,7 @@ input, select, textarea {
     align-items: flex-start;
     gap: 30px;
     margin-bottom: 44px;
+    padding: 0;
 }
 
 .profile-pic {
@@ -3874,13 +3875,11 @@ input, select, textarea {
     display: flex;
     gap: 24px;
     overflow-x: auto;
-    padding: 20px 0;
-    margin: 0 -20px;
     padding: 20px;
+    margin: 0 -20px 44px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    margin-bottom: 44px;
 }
 
 .highlights-container::-webkit-scrollbar {
@@ -4114,6 +4113,7 @@ input, select, textarea {
     color: #fff;
     font-size: 1.5em;
     transition: color 0.2s ease;
+    border-bottom: none;
 }
 
 #footer .icons a:hover {
@@ -4199,4 +4199,16 @@ input, select, textarea {
 
 [data-theme="dark"] .post-image {
     background: #0d1117 !important;
+}
+
+/* Remove dotted underlines from inline links in profile sections */
+.profile-bio a,
+.profile-stats a {
+    border-bottom: none;
+}
+
+/* Fix active highlight tab label color in dark mode (specificity tie resolved by order) */
+[data-theme="dark"] .highlight.active span {
+    color: #0095f6;
+    font-weight: 600;
 }
